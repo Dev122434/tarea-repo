@@ -54,6 +54,7 @@ public class ProductosBean {
 
                 if (consulta.next()) {//Existe al menos un registro
                     //this.alumno.setMatricula(consulta.getString("matricula"));
+                    this.producto.setId_producto(consulta.getInt("id_producto"));
                     this.producto.setDescripcion(consulta.getString("descripcion"));
                     this.producto.setPrecio(consulta.getDouble("precio"));
                 } else { //No existen registros en la consulta

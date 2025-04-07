@@ -59,10 +59,8 @@ public class ApiRest {
     public String buscarProducto(@PathParam("clave") String clave) {
 
         ProductosBean productosBean = new ProductosBean();
-        Producto producto = new Producto();
-        producto.setClave(clave);
-
         Gson json = new Gson();
+        productosBean.getProducto().setClave(clave);
         String response = json.toJson(productosBean.getProducto());
         return response;
     }

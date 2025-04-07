@@ -55,7 +55,6 @@ public class Test {
         try {
             String id = "P001";
             URL url = new URL("http://10.0.89.252:8080/restful/webresources/producto/buscarProducto/" + id);
-            System.out.println(url);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             int responsecode = con.getResponseCode();
@@ -73,15 +72,9 @@ public class Test {
                 System.out.println("Valor recibido del GET con parámetros: " + informationstring);
 
                 Producto producto = json.fromJson(cadenajson, Producto.class);
-
-                if (producto != null) {
-                    System.out.println(producto.getId_producto());
-                    System.out.println(producto.getClave());
-                    System.out.println(producto.getDescripcion());
-                    System.out.println(producto.getPrecio());
-                } else {
-                    System.out.println("No se pudo deserializar el producto.");
-                }
+                System.out.println(producto.getClave());
+                System.out.println(producto.getDescripcion());
+                System.out.println(producto.getPrecio());
             }
         } catch (IOException e) {
             e.printStackTrace();
